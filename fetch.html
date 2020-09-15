@@ -11,11 +11,23 @@
       type="button"
       value="Fetch"
       onclick="
-      fetch('html').then(function(response){
-        response.text().then(function(text){
-          document.querySelector('article').innerHTML = text;
-          })
-        })
+      // fetch('html').then(function(response){
+      //   response.text().then(function(text){
+      //     document.querySelector('article').innerHTML = text;
+      //     })
+      //   })
+      // Asynchronous 비동기
+      function callBackMe(){
+        console.log('응답 끝');
+      }
+      // fetch 함수는 html을 서버에서 응답하게 한다
+      // then은 응답이 끝나면 아래의 기능을 수행하고 나서 파라미터에 있는 것을 호출한다
+      fetch('html').then(callBackMe);
+      console.log('1');
+      console.log('2');
+      console.log('3');
+      console.log('4');
+      console.log('5');
       "
     />
   </body>
