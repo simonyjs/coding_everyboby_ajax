@@ -6,13 +6,14 @@
     <title>Document</title>
   </head>
   <body>
+    <article></article>
     <input
       type="button"
       value="Fetch"
       onclick="
-      fetch('css').then(function(response){
+      fetch('html').then(function(response){
         response.text().then(function(text){
-          alert('HI!');
+          document.querySelector('article').innerHTML = text;
           })
         })
       "
