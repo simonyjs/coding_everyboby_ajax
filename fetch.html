@@ -17,12 +17,39 @@
       //     })
       //   })
       // Asynchronous 비동기
-      function callBackMe(){
-        console.log('응답 끝');
-      }
+      // function callBackMe(){
+      //   console.log('응답 끝');
+      // }
+      //익명함수 전환 즉 이름이 없는 함수로 바꿈
+      // callBackMe = function(){
+      //   console.log('응답 끝');
+      // }
       // fetch 함수는 html을 서버에서 응답하게 한다
       // then은 응답이 끝나면 아래의 기능을 수행하고 나서 파라미터에 있는 것을 호출한다
-      fetch('html').then(callBackMe);
+      // fetch('html').then(callBackMe);
+      // console.log('1');
+      // console.log('2');
+      // console.log('3');
+      // console.log('4');
+      // console.log('5');
+      // 익명함수 대입
+      // fetch('html').then(function(){
+      //   console.log('응답 끝');
+      // });
+      // console.log('1');
+      // console.log('2');
+      // console.log('3');
+      // console.log('4');
+      // console.log('5');
+      // 사용설명서에 의하면 then에 콜백함수를 주게 되면 콜백함수가 fetch api를 실행하게되면
+      // 함수의 첫번째 인자의 값으로 response object를 준다 그래서 그 객체를 찍어본다. 이것은 응답의 결과를 담고있다.
+      fetch('js').then(function(response){
+        // console.log(response);
+        // response 객체의 여러 속성을 응용해본다.
+        if(response.status == 404){
+          alert('파일 없음')
+        };
+      });
       console.log('1');
       console.log('2');
       console.log('3');
