@@ -18,34 +18,13 @@
     />
     <ol>
       <li>
-        <a
-          onclick="fetch('html').then(function(response){
-            response.text().then(function(text){
-              document.querySelector('article').innerHTML = text;
-        })
-      })"
-          >HTML</a
-        >
+        <a onclick="fetchPage('html')">HTML</a>
       </li>
       <li>
-        <a
-          onclick="fetch('css').then(function(response){
-        response.text().then(function(text){
-          document.querySelector('article').innerHTML = text;
-    })
-  })"
-          >CSS</a
-        >
+        <a onclick="fetchPage('css')">CSS</a>
       </li>
       <li>
-        <a
-          onclick="fetch('js').then(function(response){
-        response.text().then(function(text){
-          document.querySelector('article').innerHTML = text;
-    })
-  })"
-          >JavaScript</a
-        >
+        <a onclick="fetchPage('js')">JavaScript</a>
       </li>
     </ol>
     <article>
@@ -61,5 +40,14 @@
       January 1991 and to the general public on the Internet in August 1991.
     </p> -->
     </article>
+    <script>
+      function fetchPage(contents) {
+        fetch(contents).then(function (response) {
+          response.text().then(function (text) {
+            document.querySelector("article").innerHTML = text;
+          });
+        });
+      }
+    </script>
   </body>
 </html>
